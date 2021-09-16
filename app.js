@@ -18,7 +18,7 @@ app.use(bodyParse.json())
         next();  
     })
 //模块路由
-app.use('/home',userInfoRouter)
+app.use('/user',userInfoRouter)
 
 
 app.listen(6060)

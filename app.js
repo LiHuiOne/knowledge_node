@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose  = require('mongoose')
 const bodyParse = require('body-parser')
 const userInfoRouter = require('./route/userInfo_router')
+const echartsRouter = require('./route/echarts_router')
 mongoose.connect('mongodb://localhost/knowledge').then(()=>{
     console.log("数据库连接成功")
 })
@@ -18,7 +19,9 @@ app.use(bodyParse.json())
         next();  
     })
 //模块路由
+
 app.use('/user',userInfoRouter)
+app.use('/echart',echartsRouter)
 
 
 app.listen(6060)

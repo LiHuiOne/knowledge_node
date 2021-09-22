@@ -5,13 +5,7 @@ const responseUntil = function(result){
     let resObj = {
         status:result?'ok':'fail'
     }
-    if(Array.isArray(result)){
-        responseData=Object.assign({},resObj,{data:result})
-    }else{
-        responseData=Object.assign({},resObj,result)
-    }
-    
-    console.log(responseData)
+    responseData=Object.assign({},resObj,result)
     return responseData
 }
 

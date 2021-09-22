@@ -3,6 +3,10 @@ const userCollection = require('../model/userInfo_model.js')
 const userInfoRouter = express.Router();
 const responseUntil = require('../until/response_until.js')
 userInfoRouter.get('/save',(req,res,next)=>{
+    userCollection.create({
+        name:'admin',
+        password:'123'
+    })
     res.send("ppp")
     
 })

@@ -15,7 +15,6 @@ echartsRouter.get('/index',(req,res,next)=>{
     const skipCount = (parseInt(req.query.currentPage-1))*parseInt(req.query.pageSize)
     echartsCollection.find().then(response=>{
         echartsCollection.find().skip(skipCount).limit(parseInt(req.query.pageSize)).then(result=>{
-            console.log(result)
             let resObj={
                 count:Math.ceil(response.length/parseInt(req.query.pageSize)),
                 data:result
